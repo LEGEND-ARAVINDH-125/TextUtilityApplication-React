@@ -1,17 +1,17 @@
 //import logo from './logo.svg';
 import { useState } from 'react';
 import './Appa.css';
-import About from './components/About';
+
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
 import React from 'react'
-import { 
+{/*import { 
      BrowserRouter as Router,
      Routes, // instead of switch,
      Route,
      Link
-} from "react-router-dom";
+} from "react-router-dom";*/}
 
 
 
@@ -46,22 +46,13 @@ function App() {
 
   return (
           <>
-              <Router>
+         
               <Navbar title = "AravUtils" abouttext = "About Us" mode = {mode} toggleMode = {toggleMode}/>
               <Alert alert = {alert}/>
               <div className="container my-3">
-                  
-                    <Routes>
-                          {/*/users --> Component 1
-                          /users/home--> --> Component2*/}
-                          <Route path="/" exact element={<TextForm heading = 'Enter the text to analyze below' mode = {mode} handleAlert = {handleAlert}/>} />
-                          <Route path="/about" exact element={<About />} />
-                    </Routes>
-                  
-                  
-
+                          <TextForm heading = 'Enter the text to analyze below' mode = {mode} handleAlert = {handleAlert}/>
               </div>
-              </Router>
+              
           </>
   );
 }
